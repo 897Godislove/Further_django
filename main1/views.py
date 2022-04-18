@@ -11,5 +11,9 @@ def home(request):
 
   return render (request, 'index.html', params)
 
-def details (request, pk):
-  return HttpResponse(pk)
+def details (request, slug):
+  full_detail = Article.objects.get(slug = slug)
+  param = {
+    'data' : full_detail
+  }
+  return render(request, 'detail.html', param)
