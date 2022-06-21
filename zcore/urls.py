@@ -22,9 +22,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('boss/', admin.site.urls),
-    path('', include('main1.urls')),
-    path('', include('accounts.urls')),
+    path('first/', include('main1.urls')),
+    path('second/', include('accounts.urls')),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns() #first step for setting up your static files, appending an already made function
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

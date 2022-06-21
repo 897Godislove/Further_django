@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),
-)
+) #this is tuple that joins your base directory, further with the assets folder. It tells django where to find the static files.
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = (

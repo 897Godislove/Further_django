@@ -11,10 +11,36 @@
 {% endblock %} </title> 
 </head>
 <body>
-<a href="{% url 'home' %}"><img src="{% static 'bitcoin.jpg' %}"></a>
+  <nav>
+    <a href="{% url 'main1:home' %}"><img src="{% static 'bitcoin.jpg' %}"></a>
+
+    {% if user.is_authenticated %}
+
+    <ul>
+      <li>
+        <form action="{% url 'accounts:logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
+        </form>
+      </li>
+      <li>
+        <a href="{% url 'main1:create' %}"><button>New Article</button></a>
+      </li>
+    </ul>
+
+    {% else %}
+
+    <a href="{% url 'accounts:signup' %}"><button class="H-but">Signup</button></a>
+    <a href="{% url 'accounts:login' %}"><button class="H-but">Login</button></a>
+    
+    {% endif %}
+
+  </nav>
+
   {% block content %}
     
   {% endblock %}
 
+<script src="{% static 'scripting.js' %}"></script>
 </body>
 </html>

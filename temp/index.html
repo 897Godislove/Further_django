@@ -5,11 +5,12 @@
 {% block  content %}
 
 <center>
-  <h1 class="mt-15">Hello World!</h1>
+  <h1 class="">Hello World!</h1>
 
   {% for datalist in data %}
-  <h2><a href="{% url 'detail' datalist.slug %}">{{datalist.title}}</a></h2>
+  <h2><a href="{% url 'main1:detail' datalist.id %}">{{datalist.title}}</a></h2>
   <p>{{datalist.snippet}}</p>
+  <p>Article by {{datalist.author.username}}</p>
   {% endfor %}
 
 </center>

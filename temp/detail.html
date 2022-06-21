@@ -6,7 +6,9 @@
   <div>
     <h1>{{data.title}}</h1>
     <p>{{data.body}}</p>
-    <p>{{data.date}}</p>
-    <img src="{{data.thumb.url}}">
+    <p>Added by {{data.author.username}} on {{data.date}}</p>
+    <img style="height: 427px; width: 760px" src="{{data.thumb.url}}">
+    <a href="{% url 'main1:update' data.id %}"><button>Edit data</button></a>
+    <a href="{% url 'main1:delete' data.id %}"><button>Delete data</button></a>
   </div>
 {% endblock %}
