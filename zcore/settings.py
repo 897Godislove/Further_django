@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,8 @@ SECRET_KEY = 'django-insecure-x7dawb6nndg))@365)!&nt75b*2%%2+r_&tjz^4#wbzwu0a(5b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['further.heroku.com']
 
 
 # Application definition
@@ -78,10 +80,21 @@ WSGI_APPLICATION = 'zcore.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default' : {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6jndds168ggfu',
+        'USER': 'lsorqwvrflzybl',
+        'PASSWORD': '89530f5988a070b4bd77e011251a3248296fc3b24d4b78773930834242373e46',
+        'HOST': 'ec2-34-200-35-222.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -131,6 +144,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'media')
 )
+
+
+django_heroku.settings(locals())
 
 
 # Default primary key field type
