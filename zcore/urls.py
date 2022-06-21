@@ -22,7 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('boss/', admin.site.urls),
-    path('first/', include('main1.urls')),
+    path('', include('main1.urls')),
     path('second/', include('accounts.urls')),
 ]
 
