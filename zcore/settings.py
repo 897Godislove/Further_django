@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-x7dawb6nndg))@365)!&nt75b*2%%2+r_&tjz^4#wbzwu0a(5b
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['further.heroku.com']
+ALLOWED_HOSTS = ['further-app.heroku.com']
 
 
 # Application definition
@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'zcore.wsgi.application'
 DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6jndds168ggfu',
-        'USER': 'lsorqwvrflzybl',
-        'PASSWORD': '89530f5988a070b4bd77e011251a3248296fc3b24d4b78773930834242373e46',
-        'HOST': 'ec2-34-200-35-222.compute-1.amazonaws.com',
+        'NAME': 'd6k3kp1ehc7ain',
+        'USER': 'zletdlrruawuho',
+        'PASSWORD': '85bcf41c74ea1f446322c46d6c6a82fd0b2e70715afebf87d2c1943beb77aa5f',
+        'HOST': 'ec2-18-204-142-254.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
@@ -135,7 +135,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),
 ) #this is tuple that joins your base directory, further with the assets folder. It tells django where to find the static files.
